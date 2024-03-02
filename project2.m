@@ -2,14 +2,14 @@
 Fs = 44100; 
 
 % Time duration equal to your speech file
-speechDuration = 5; % replace with the duration of your speech file
+speechDuration = 5; 
 
 % Frequency of the sine tone
 f = 5000; % 5000 Hz
 t = 0:1/Fs:speechDuration; % time vector
 sineTone = sin(2*pi*f*t);
 sound(sineTone, Fs);
-filename = 'td-sinetone.wav'; % replace with your team number
+filename = 'td-sinetone.wav'; 
 audiowrite(filename, sineTone, Fs);
 figure;
 spectrogram(sineTone, 256, [], [], Fs, 'yaxis');
@@ -29,7 +29,7 @@ t_chirp = 0:1/Fs:speechDuration; % time vector for chirp
 chirpSignal = chirp(t_chirp, f_start, speechDuration, f_end);
 sound(chirpSignal, Fs);
 
-filename_chirp = 'td-chirp.wav'; % replace with your team number
+filename_chirp = 'td-chirp.wav'; 
 audiowrite(filename_chirp, chirpSignal, Fs);
 
 figure;
@@ -41,7 +41,7 @@ ylabel('Frequency (Hz)');
 t_cetk = 0:1/Fs:speechDuration; % time vector for CETK-like pattern
 cetkPattern = sin(2*pi*linspace(0, 8000, length(t_cetk)).*t_cetk);
 sound(cetkPattern, Fs);
-filename_cetk = 'td-cetk.wav'; % replace with your team number
+filename_cetk = 'td-cetk.wav';  
 audiowrite(filename_cetk, cetkPattern, Fs);
 
 figure;
@@ -55,7 +55,6 @@ ylabel('Frequency (Hz)');
 
 
 
-% Replace 'yourteamnumber' with your actual team number
 teamNumber = 'td';
 
 % Load the speech file
